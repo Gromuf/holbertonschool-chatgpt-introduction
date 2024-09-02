@@ -20,10 +20,17 @@ class Checkbook:
     def get_balance(self):
         print("Current Balance: ${:.2f}".format(self.balance))
 
+
 def main():
     cb = Checkbook()
     while True:
-        action = input("What would you like to do? (deposit, withdraw, balance, exit): ").strip().lower()
+        action = (
+            input(
+                """What would you like to do?
+                (deposit, withdraw, balance, exit): """
+                ).strip()
+            .lower()
+        )
         if action == 'exit':
             break
         elif action == 'deposit':
@@ -48,6 +55,7 @@ def main():
             cb.get_balance()
         else:
             print("Invalid command. Please try again.")
+
 
 if __name__ == "__main__":
     main()

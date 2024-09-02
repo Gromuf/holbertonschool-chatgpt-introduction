@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 import sys
 
+
 def factorial(n):
     """
     Calculate the factorial of a given number recursively.
 
     Parameters:
-    n (int): The number for which the factorial is to be calculated. 
+    n (int): The number for which the factorial is to be calculated.
              Must be a non-negative integer.
 
     Returns:
@@ -17,6 +18,6 @@ def factorial(n):
     else:
         return n * factorial(n-1)
 
-# Get the input number from the command line argument, calculate its factorial, and print the result
+
 f = factorial(int(sys.argv[1]))
 print(f)

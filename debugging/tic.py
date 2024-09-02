@@ -6,6 +6,7 @@ def print_board(board):
         print(" | ".join(row))
         print("-" * 5)
 
+
 def check_winner(board):
     """Check if there is a winner on the board."""
     # Check rows
@@ -15,7 +16,10 @@ def check_winner(board):
 
     # Check columns
     for col in range(len(board[0])):
-        if board[0][col] == board[1][col] == board[2][col] and board[0][col] != " ":
+        if (
+            board[0][col] == board[1][col] == board[2][col] and
+            board[0][col] != " "
+        ):
             return board[0][col]
 
     # Check diagonals
@@ -27,6 +31,7 @@ def check_winner(board):
 
     return None
 
+
 def tic_tac_toe():
     """Main function to play Tic-Tac-Toe."""
     board = [[" "]*3 for _ in range(3)]
@@ -35,8 +40,12 @@ def tic_tac_toe():
         print_board(board)
         while True:
             try:
-                row = int(input(f"Enter row (0, 1, or 2) for player {player}: "))
-                col = int(input(f"Enter column (0, 1, or 2) for player {player}: "))
+                row = int(input(
+                    f"Enter row (0, 1, or 2) for player {player}: "
+                    ))
+                col = int(input(
+                    f"Enter column (0, 1, or 2) for player {player}: "
+                    ))
                 if row in range(3) and col in range(3):
                     if board[row][col] == " ":
                         board[row][col] = player
@@ -47,7 +56,7 @@ def tic_tac_toe():
                     print("Invalid input. Please enter 0, 1, or 2.")
             except ValueError:
                 print("Invalid input. Please enter a numeric value.")
-        
+
         player = "O" if player == "X" else "X"
 
     print_board(board)
@@ -56,6 +65,7 @@ def tic_tac_toe():
         print(f"Player {winner} wins!")
     else:
         print("It's a tie!")
+
 
 if __name__ == "__main__":
     tic_tac_toe()
