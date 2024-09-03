@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import sys
 
-    """
+"""
     Calculate the factorial of a non-negative integer n.
 
     The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.
@@ -14,7 +14,7 @@ import sys
 
     Returns:
     int: The factorial of the integer n. If n is 0, the function returns 1 as per the definition of factorial.
-    """
+"""
 def factorial(n):
     if n == 0:
         return 1
